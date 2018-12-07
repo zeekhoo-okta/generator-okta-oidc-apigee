@@ -1,0 +1,14 @@
+node_modules/
+package-lock.json
+
+# Yo
+.yo*
+
+# Mac
+.DS_Store
+
+# Intellij
+.idea/
+*.iml
+*.iws
+*.tgz

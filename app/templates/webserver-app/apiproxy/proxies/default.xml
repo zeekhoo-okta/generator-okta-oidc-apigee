@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>SetConfigurationVariables</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="authenticated-homepage">
+            <Description/>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>BuildValidateTokenRequest</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>ValidateTokenCallout</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>ExtractUser</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Condition>(calloutResponse.status.code == 200)</Condition>
+                    <FaultRules/>
+                    <Name>SetAuthenticatedHomePageResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(request.verb =="GET") and (proxy.pathsuffix MatchesPath "/") and (request.queryparam.access_token != null)</Condition>
+        </Flow>
+        <Flow name="index">
+            <Description/>
+            <Request/>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>HTMLIndex</Name>
+                </Step>
+            </Response>
+            <Condition>(request.verb == "GET") and (proxy.pathsuffix MatchesPath "/")</Condition>
+        </Flow>
+        <Flow name="callback">
+            <Description/>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>EncodeAppCredentials</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>BuildAccessTokenRequest</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>RequestAccessToken</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>ExtractAccessToken</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>RedirectToAuthenticatedHomepage</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/callback") and (request.queryparam.code != null) and (request.verb =="GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/web</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

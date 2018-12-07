@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="BuildAccessTokenRequest" version="SHA-512:52bd954a797e4377ef1d5aa280f43b00ac2f153a5573c5cdd70b2cee732011b0c915f571f5bc4152de1b064fcb90c5a369e4f84c33b7bb646874ee7bbdfecadd"/>
+        <VersionInfo resourceName="BuildValidateTokenRequest" version="SHA-512:0cc2f950d9f6312a2d09af7c2ad1828fa176afcc77f491067054804981847e8f6bbd1b41a678f63138e8251f3c44f1b06008121ef7172feedffd60e3e8f9f19e"/>
+        <VersionInfo resourceName="EncodeAppCredentials" version="SHA-512:3fc83405564cf3058546b91522bee9f524e50629747fb1541be7bb3f58dba90c5d0873a9a0ddd83fe9a29d3e928a8679cde215876cf6824da01ede7aac21d43f"/>
+        <VersionInfo resourceName="ExtractAccessToken" version="SHA-512:7a95b8ae5ba2b6bf12c88d212461af9b08d80ad3993d716d75b02b076cd99bb56c4606fce742e6aad771efa20e0528a903f6413f29f5ffd617f1187e3d8c8780"/>
+        <VersionInfo resourceName="ExtractUser" version="SHA-512:f9f0fc5589548147b7d7fad2e665f11ce0b33189ea3e50472358176fbd3498531470b1de57325f4bc0ef883dbfe8eab2badc8cba90ec02672642b6baff80da84"/>
+        <VersionInfo resourceName="HTMLIndex" version="SHA-512:fec42ccdf3c68213b1010fd577f70eec85109fe001b8d7a127b773fe072884c9db5817bd756917c35a8e5ec9ca5f9936267327e2ca69a39e48f792fda6a0b30f"/>
+        <VersionInfo resourceName="RedirectToAuthenticatedHomepage" version="SHA-512:d4625367a49a5de0d87d8027fa6871bfadd70dd708b00cb3152096d792784519149422b8910995657969e9a17df1f2936d1f0f457188e85a1a940480321ebc79"/>
+        <VersionInfo resourceName="RequestAccessToken" version="SHA-512:dff2a0eefbdac3751eb9b4ec54a9b912e53ac9fddc45e28a083f24f6b352ac9e785bf9a2c5ba0787e249f43b5dffeaa650f8d79d1d67dbd5b06f60f5e1dbeb11"/>
+        <VersionInfo resourceName="SetAuthenticatedHomePageResponse" version="SHA-512:f9ae9aa233e63a961d3de8b124aaf481ed1fc455ab2df9e4f0f82c9692d081b16c89f41f540b8ab4708cb72a67b817c2b0ea3b9aa3d16a2bd7fcf434a7190bb5"/>
+        <VersionInfo resourceName="SetConfigurationVariables" version="SHA-512:a76788ab3b408ee30d13193c1634af4f922edb4aa3d20eb98481b1b6992cb1f6a193db111e113fa417ac14910b4a77efe9c44f70e1232baad542eb669c52c2c6"/>
+        <VersionInfo resourceName="ValidateTokenCallout" version="SHA-512:6d7fcd2ef87bed8420770e688f3d525a9f1aada2bd1bfe174482444c6ad522eb0fb8c9ef8f18822012017f3b290f051cf9cc40a895032f557abe5497e275c057"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:48fbc49eb409417969f503aded8c93659767d6004e3e06c2cc7636361732c914a7d8bea0ab69811b93ce19dbf71be7abbffd2411999134f1d632a196701766f0"/>
+    </ProxyEndpoints>
+    <Resources/>
+    <SharedFlows/>
+    <TargetEndpoints/>
+</Manifest>

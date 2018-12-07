@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="HTMLIndex">
+    <DisplayName>HTMLIndex</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        <Payload contentType="text/html" variablePrefix="^" variableSuffix="~">
+      &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;script&gt;
+         var BASEURL="https://ORGNAME-ENVNAME.apigee.net";
+         var REDIRECT="https://ORGNAME-ENVNAME.apigee.net/web/callback";
+         var CLIENT_ID="WEBSERVERAPPKEY";
+
+
+         function login()
+         {
+         window.location.href=BASEURL+'/oauth2/authorize?client_id='+CLIENT_ID+'&amp;redirect_uri='+REDIRECT+'&amp;response_type=code&amp;scope=foo&amp;state=bar';
+         }
+      &lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;input type="button" value="Apigee+Okta Example Login" onclick="login()" /&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+      </Payload>
+        <StatusCode>200</StatusCode>
+        <ReasonPhrase>OK</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo type="request" transport="http" createNew="true"/>
+</AssignMessage>

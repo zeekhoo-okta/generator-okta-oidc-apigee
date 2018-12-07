@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VerifyJWT async="false" continueOnError="false" enabled="true" name="VerifyIdToken">
+    <DisplayName>VerifyIdToken</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Algorithm>RS256</Algorithm>
+    <AdditionalClaims/>
+    <AdditionalHeaders/>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <Issuer ref="okta.issuer"/>
+    <PublicKey>
+        <JWKS ref="cached.okta.jwks"/>
+    </PublicKey>
+    <Source>id_token</Source>
+</VerifyJWT>

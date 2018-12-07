@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JSONToXML async="false" continueOnError="false" enabled="true" name="JsonToXml">
+    <DisplayName>JsonToXml</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Options>
+        <InvalidCharsReplacement></InvalidCharsReplacement>
+        <ObjectRootElementName>Root</ObjectRootElementName>
+        <ArrayRootElementName>Array</ArrayRootElementName>
+        <ArrayItemElementName>Item</ArrayItemElementName>
+    </Options>
+</JSONToXML>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="RF-ParametersAreRequired">
+    <DisplayName>RF-ParametersAreRequired</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json">{
+                "error" : {
+                    "code" : 400,
+                    "message" : "You must provide values for required parameters 'client_id', 'scope', 'response_type', and 'redirect_uri'"
+                }
+            }
+            </Payload>
+            <StatusCode>400</StatusCode>
+            <ReasonPhrase>One or more required parameters are null</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

@@ -1,0 +1,26 @@
+{
+  "name": "generator-okta-oidc-apigee",
+  "version": "1.0.0",
+  "description": "Yeoman generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "zeekhoo-okta",
+  "license": "ISC",
+  "dependencies": {
+    "apigeetool": "^0.9.0",
+    "chalk": "^2.4.1",
+    "lodash": "^4.17.11",
+    "shelljs": "^0.8.3",
+    "underscore": "^1.9.1",
+    "yeoman-generator": "^3.1.1",
+    "yosay": "^1.2.1"
+  }
+}

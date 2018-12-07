@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VerifyJWT async="false" continueOnError="false" enabled="true" name="VerifyAccessToken">
+    <DisplayName>VerifyAccessToken</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Algorithm>RS256</Algorithm>
+    <AdditionalClaims/>
+    <AdditionalHeaders/>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <Issuer ref="okta.issuer"/>
+    <PublicKey>
+        <JWKS ref="cached.okta.jwks"/>
+    </PublicKey>
+    <Source>access_token</Source>
+</VerifyJWT>

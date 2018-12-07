@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PopulateCache async="false" continueOnError="false" enabled="true" name="PopulateCache.ProxySessionId">
+    <DisplayName>PopulateCache.ProxySessionId</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <KeyFragment ref="messageid"/>
+        <Prefix>okta-oidc</Prefix>
+    </CacheKey>
+    <CacheResource>cache1</CacheResource>
+    <Scope>Application</Scope>
+    <ExpirySettings>
+        <TimeoutInSec>120</TimeoutInSec>
+    </ExpirySettings>
+    <Source>okta_auth.request</Source>
+</PopulateCache>

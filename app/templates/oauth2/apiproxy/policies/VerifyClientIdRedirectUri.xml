@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="VerifyClientIdRedirectUri">
+    <DisplayName>VerifyClientIdRedirectUri</DisplayName>
+    <Properties/>
+    <Attributes/>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>GenerateAuthorizationCode</Operation>
+    <ClientId>request.queryparam.client_id</ClientId>
+    <RedirectUri>request.queryparam.redirect_uri</RedirectUri>
+    <Scope>request.queryparam.scope</Scope>
+    <SupportedGrantTypes/>
+    <GenerateResponse enabled="false"/>
+    <ExpiresIn>1000</ExpiresIn>
+    <Tokens/>
+</OAuthV2>

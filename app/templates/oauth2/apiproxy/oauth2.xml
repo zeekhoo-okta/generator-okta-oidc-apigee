@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="8" name="oauth2">
+    <Basepaths>/oauth2</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1541611335005</CreatedAt>
+    <CreatedBy>zeekhoo@gmail.com</CreatedBy>
+    <Description>oauth2</Description>
+    <DisplayName>oauth2</DisplayName>
+    <LastModifiedAt>1543961173203</LastModifiedAt>
+    <LastModifiedBy>zeekhoo@gmail.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:00fd653ac6ac6c310b1055aeccbc488f45e7a23de1e6d8073da36c27d483409cf7d4a0b461115d312eee6007960ecb70c7b6ca93e98dd826f02d56236231ec83</ManifestVersion>
+    <Policies>
+        <Policy>AccessTokenRefresh</Policy>
+        <Policy>AccessTokenRequest</Policy>
+        <Policy>AccessTokenResponse</Policy>
+        <Policy>AccessTokenResponseCC</Policy>
+        <Policy>AccessTokenResponseRT</Policy>
+        <Policy>GenerateOktaOAuth2AuthorizeRequest</Policy>
+        <Policy>JsonToXml</Policy>
+        <Policy>PopulateCache.ProxySessionId</Policy>
+        <Policy>RF-ParametersAreRequired</Policy>
+        <Policy>RedirectToOktaOAuth2Authorize</Policy>
+        <Policy>Send404NotFoundResponse</Policy>
+        <Policy>SetConfigVariables</Policy>
+        <Policy>SetMessageIdCookie</Policy>
+        <Policy>SetValidTokenResponse</Policy>
+        <Policy>VerifyAccessToken</Policy>
+        <Policy>VerifyClientIdRedirectUri</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://GenerateOktaOAuth2AuthorizeRequest.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+</APIProxy>

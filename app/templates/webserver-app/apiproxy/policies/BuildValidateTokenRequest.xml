@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="BuildValidateTokenRequest">
+    <DisplayName>BuildValidateTokenRequest</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        <Headers>
+            <Header name="Authorization">Bearer {request.queryparam.access_token}</Header>
+        </Headers>
+        <Payload/>
+        <Verb>GET</Verb>
+        <Path>/oauth2/validate</Path>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo type="request" transport="http" createNew="true">calloutRequest</AssignTo>
+</AssignMessage>

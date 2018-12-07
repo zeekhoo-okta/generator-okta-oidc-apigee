@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="ExtractMessageId">
+    <DisplayName>ExtractMessageId</DisplayName>
+    <Source clearPayload="false">request</Source>
+    <Header name="Cookie">
+        <Pattern ignoreCase="false">messageId={messageId}</Pattern>
+    </Header>
+    <VariablePrefix>okta-oauth-state</VariablePrefix>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>

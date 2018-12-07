@@ -1,0 +1,14 @@
+{
+  "apiResources" : [ ],
+  "approvalType" : "auto",
+  "attributes" : [ ],
+  "description" : "",
+  "displayName" : "okta-oidc-apigee-webserver-product",
+  "environments" : [ "ENVNAME" ],
+  "name" : "okta-oidc-apigee-webserver-product",
+  "proxies" : [ ],
+  "quota" : "",
+  "quotaInterval" : "",
+  "quotaTimeUnit" : "",
+  "scopes" : [ ]
+}

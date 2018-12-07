@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BasicAuthentication async="false" continueOnError="false" enabled="true" name="EncodeAppCreds">
+    <DisplayName>EncodeAppCreds</DisplayName>
+    <Operation>Encode</Operation>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <User ref="okta.client_id"/>
+    <Password ref="okta.client_secret"/>
+    <AssignTo createNew="true">appCredentials</AssignTo>
+    <Source/>
+</BasicAuthentication>

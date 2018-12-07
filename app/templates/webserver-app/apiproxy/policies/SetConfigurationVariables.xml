@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="SetConfigurationVariables">
+    <DisplayName>SetConfigurationVariables</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <AssignVariable>
+        <Name>appKey</Name>
+        <Value>WEBSERVERAPPKEY</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>appSecret</Name>
+        <Value>WEBSERVERAPPSECRET</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+</AssignMessage>

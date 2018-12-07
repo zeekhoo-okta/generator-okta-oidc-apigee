@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="RedirectToAuthenticatedHomepage">
+    <DisplayName>RedirectToAuthenticatedHomepage</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        <Headers>
+            <Header name="Location">https://{organization.name}-{environment.name}.apigee.net/web?access_token={access_token}</Header>
+        </Headers>
+        <StatusCode>302</StatusCode>
+        <ReasonPhrase>Redirect</ReasonPhrase>
+    </Set>
+    <AssignVariable>
+        <Name>name</Name>
+        <Value/>
+        <Ref/>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo type="response" transport="http" createNew="true"/>
+</AssignMessage>

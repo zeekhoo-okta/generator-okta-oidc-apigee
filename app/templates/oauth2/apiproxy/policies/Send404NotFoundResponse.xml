@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Send404NotFoundResponse">
+    <DisplayName>Send404NotFoundResponse</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        <StatusCode>404</StatusCode>
+        <ReasonPhrase>Not Found</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <AssignTo type="response" transport="http" createNew="true"></AssignTo>
+</AssignMessage>

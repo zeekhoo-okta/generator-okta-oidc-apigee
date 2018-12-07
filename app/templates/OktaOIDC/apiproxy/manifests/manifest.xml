@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="AV-OktaJwks" version="SHA-512:473c04f30f51fe48f66067d902cb2c8e506565fe2b82b62fec8a899861223fc0cc38abf4ffb6807d7818cbebbb9a21df747a169599ad9456a1fba7a17945fdab"/>
+        <VersionInfo resourceName="EncodeAppCreds" version="SHA-512:4aee704a8e0c342ddf42a1eb3753570c986bcc5fdbae68d0f66bd43a66c051bd4479556927270a46e5f030b91bc3973be26c1abb5352954fa41d503546717055"/>
+        <VersionInfo resourceName="ExtractAccessAndIdToken" version="SHA-512:72ddf6944ec429e15c4847da15e7facf74bb395b7d443831f3b52508b6f5889310fed4aa4ccb5c168bd88ec771aa330ad42eab4fd32d2b54718c3a6c58c6cd82"/>
+        <VersionInfo resourceName="ExtractMessageId" version="SHA-512:a59201f1e02cb7c39cc05776da069a436086b53beabd4f62c80c826f8edd7c76ccec0d1556ffae827e6ff28dd180024f981791e149320bd8f321c6ab9f7b1ec9"/>
+        <VersionInfo resourceName="GenerateAuthorizationCodeWithUserContext" version="SHA-512:de76e89e3145c698cbfe34f12bcbcd75061f536a280a5b105f86a889692cbaccb9eefd5704b8988d91f45eb4cc507e9711404aceb351123f3011f4cac248de81"/>
+        <VersionInfo resourceName="LookupCache-OktaJwks" version="SHA-512:6436a8d16e90b6b1195a92e94af92a37a4af94bc18944b4ef8dc67cd3572306a91949759b5dd690372564f0636ba8003565132a1eaa3bf82afb86469ade8cb56"/>
+        <VersionInfo resourceName="LookupCache-ProxySessionId" version="SHA-512:391f6e6fac041983951f6af3cf7d7d04f402b6dc987335bd545de6227b933252720a47af2eafcc367fbed34ecd3e70609f199af75ee97194b9ff2efc1bbc8194"/>
+        <VersionInfo resourceName="OktaAccessTokenRequest" version="SHA-512:2c838c5d5ff6d15b4762e791d2a7305a5db8ea7b05afa4601953619c11c7ff8be2d0cff07eb1b61a868e2026dc0262ebb4cab88a31944ec9eef4a2d8272843ac"/>
+        <VersionInfo resourceName="ParseCachedRequest" version="SHA-512:2dc88cee2aabd4ffced18df06657ab3a8469b657b6015634baadc2aafc6179bbe38c2f2fd7338f36eb9402b93eba97e605c20c7052f198cfcc4ab2e241fcb401"/>
+        <VersionInfo resourceName="PopulateCache-OktaJwks" version="SHA-512:0193ed394f8c1701d5d9ef13f5525f55d01f6c5b7cfd020b11bc5f7d5fea8a735d925ca42f107525eb51cbfec29e00ee85594ef5514e608bbc9bbc932c41622f"/>
+        <VersionInfo resourceName="RF-NonceDoesNotMatchRequest" version="SHA-512:758da434c4c88b10e84536ca634ab5c0afe4a3a424b9a80fa770745bfd8ac27c134a4ca0a00c3dff79f40059586cde873adae4987e62c3b4825f126a3c5c55e2"/>
+        <VersionInfo resourceName="RF-UnknownRequest" version="SHA-512:dea080b92fcc0fe8dc15982f2db0dd3eb3f446f9ad70e3a7791255ae4e8f9f66a04cf67ec99f97bd307c31510751f05f389f1d7b6d46dea4dbf37070b942ea29"/>
+        <VersionInfo resourceName="RedirectToOAuthRedirectURI" version="SHA-512:02fa7e262f4b7b4dccaa846d321b7b17f6a3f397f331f9a1d9e72ec526c2e139384a0a1bec5efa04c9be5524fdd7ffbbdbac35403344bd5494ae23944b5f7cbc"/>
+        <VersionInfo resourceName="RequestOktaAccessToken" version="SHA-512:536515aca18a5add3493578fc15e2c3cfdd148d4005071511e1c4f90c1de1b640f76a27306dcf36e012dc71f5f8297d7830e7203f5c0f382ff220b70e48775dc"/>
+        <VersionInfo resourceName="RetrieveOktaJwks" version="SHA-512:716f6924536558fdf5c6885170551c0e47619afda54aa32c7fdd396fd7ccab97532a848e146102aa9f40763d403996837ed881a77541d4952ebc01783ad2c8b9"/>
+        <VersionInfo resourceName="SetConfigVariables" version="SHA-512:a4a1d7d174ee614644394f4bbcad35111367879178f7c9ccdb84e80e688dc4392735e8a34789d5040f19042c5439861a61cb219dfa28fffea28925ac9acef847"/>
+        <VersionInfo resourceName="VerifyAccessToken" version="SHA-512:5a111e6910765d9235333ed65c0eb02990c26fc3e9337ddb31281b0a7d0345c45559f3378c55287649e4839d4c0387449c12f47fd2827cf0fbdf5eb696f31f13"/>
+        <VersionInfo resourceName="VerifyIdToken" version="SHA-512:9b554420e08d492eb341b5a5b89f6957672fc48ca9b934bdde9e5114054426f3ebb41bd8aee02372dd47aec7b2701def7e93a559952d454de50a4451d7f33691"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:1dfec20fd4d7a10e0f414825591995461b5a628d0ea6d161dd7bf8f66376de43ae56c908af7ff17ff57cfb153efd5cfd3f499ebb50b2510b83b6b957cb03bb80"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="jsc://ParseCachedRequest.js" version="SHA-512:08ea510b5b1761b7b9dde6378e1a6c5b03b955a9c7afee0a244a8f562436341a849167835248a03d40e401f095357d89321c49d894abd42b88e0aeeb77636e57"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints/>
+</Manifest>

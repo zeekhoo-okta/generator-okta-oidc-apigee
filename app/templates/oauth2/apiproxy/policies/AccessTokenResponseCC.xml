@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AccessTokenResponseCC">
+    <DisplayName>AccessTokenResponseCC</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json" variablePrefix="%" variableSuffix="#">
+        {
+        "access_token":"%oauthv2accesstoken.AccessTokenRequest.access_token#",
+        "expires_in":"%oauthv2accesstoken.AccessTokenRequest.expires_in#",
+        "scope":"%oauthv2accesstoken.AccessTokenRequest.scope#"
+        }
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo type="response" transport="http" createNew="true"/>
+</AssignMessage>

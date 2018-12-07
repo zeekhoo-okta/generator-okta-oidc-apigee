@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="SetConfigVariables">
+    <DisplayName>SetConfigVariables</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <AssignVariable>
+        <Name>okta.org</Name>
+        <Value>OKTAORGNAME</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>okta.auth_server_id</Name>
+        <Value>OKTAAUTHSERVERID</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>okta.client_id</Name>
+        <Value>OKTACLIENTID</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+</AssignMessage>

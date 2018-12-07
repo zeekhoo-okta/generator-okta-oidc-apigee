@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="2" name="webserver-app">
+    <Basepaths>/web</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1543956756668</CreatedAt>
+    <CreatedBy>zeekhoo@gmail.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>webserver-app</DisplayName>
+    <LastModifiedAt>1543956756668</LastModifiedAt>
+    <LastModifiedBy>zeekhoo@gmail.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:4e88720d46bf33eeffc71708bac89e79e497cb6be372213b10c389308ec11b6fcb5912c904ec68426a90d6a960ceabfc36ecb36f1301449e81430f8ad53e4f34</ManifestVersion>
+    <Policies>
+        <Policy>BuildAccessTokenRequest</Policy>
+        <Policy>BuildValidateTokenRequest</Policy>
+        <Policy>EncodeAppCredentials</Policy>
+        <Policy>ExtractAccessToken</Policy>
+        <Policy>ExtractUser</Policy>
+        <Policy>HTMLIndex</Policy>
+        <Policy>RedirectToAuthenticatedHomepage</Policy>
+        <Policy>RequestAccessToken</Policy>
+        <Policy>SetAuthenticatedHomePageResponse</Policy>
+        <Policy>SetConfigurationVariables</Policy>
+        <Policy>ValidateTokenCallout</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+</APIProxy>
