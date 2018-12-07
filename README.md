@@ -1,8 +1,8 @@
-This is a heavily modified version of the Apigee [oauth2 sample](https://github.com/apigee/api-platform-samples/tree/master/sample-proxies/oauth-advanced). by replacing the sample Node.js login-app with Okta. At a high level, Apigee is still the OAuth2 Authorization Server, but at the same time it is the OpenID Connect Client that authenticates with Okta. By delegating Auth to Okta, you gain all the benefits of a fully featured Identity Mangement System. Just some of the things you can do with Okta include:
+This is a heavily modified version of Apigee's [oauth andvanced sample](https://github.com/apigee/api-platform-samples/tree/master/sample-proxies/oauth-advanced) by "replacing" the sample Node.js login-app contained in the sample with Okta. Apigee is still the OAuth2 Authorization Server, but at a high level, it has also become an "OpenID Connect Client," which authenticates to Okta, the "IdP."" By delegating Authentication to Okta, you gain all the benefits of an enterprise-solution grade, secure and fully featured Identity Mangement System. Just some of the things you can do with Okta include:
 * Add Social Auth capabilities to your application
-* Seampless connect to an external IdP
+* Seamlessly connect to an 3rd party SAML and OpenID Connect IdPs
 * Provide MFA
-* Log all events
+* Logging of all events
 ...All without writing a single line of code.
 
 Below is a diagram describing the modified flow:
@@ -29,14 +29,14 @@ To run this sample, you'll need:
     - Applications > Add Application > Web
     - Provide a name for your app
     - Leave Base URI as-is
-    - IMPORTANT: Enter the "Login redirect URI" with the value `https://{myorg}-{myenv}.apigee.net/okta-oidc/callback`. For example, If myorg == "okta_oidc", and I am deploying in the "test" environment, then the redirect URI is `https://okta_oidc-test.apigee.net/okta-oidc/callback`
+    - IMPORTANT: Enter the "Login redirect URI" with the value `https://{myorg}-{myenv}.apigee.net/okta-oidc/callback`. For example, If myorg == `"okta_oidc"`, and I am deploying to the `"test"` environment, then the redirect URI is `https://okta_oidc-test.apigee.net/okta-oidc/callback`
     - Click through to complete the App setup
-    - Once complete, you can find the client_id and client_secret in the "General" tab. You will need these values when you run the Yeoman tool
+    - Once complete, you can find the `client_id` and `client_secret` in the "General" tab. You will need these values when you run the Yeoman tool
 
 * Please note that the sample does not run properly in Windows 10.  Please run in macOS or Linux for full compatibility.
 
-## <a name="deploy">tl;dr: Deploy
-1. Create a directory for this project and 'cd' into it
+## <a name="deploy">Deploying
+1. Create a directory and 'cd' into it
 e.g.
 ```
 > mkdir example-project
@@ -48,7 +48,7 @@ e.g.
 > git clone git@github.com:zeekhoo-okta/okta-oidc-apigee.git
 ```
 
-3. 'cd' into the directory:
+3. 'cd' into the "generator" directory:
 ```
 > cd generator-okta-oidc-apigee
 ```
@@ -58,7 +58,7 @@ e.g.
 > npm install
 ```
 
-5. In order to run the Yeoman toll, you'll need to symlink this local module to a global one using this command:
+5. In order to run the Yeoman tool, you'll need to symlink this local module to a global one using this command:
 ```
 > npm link
 ```
