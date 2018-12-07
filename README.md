@@ -45,7 +45,7 @@ e.g.
 
 2. Clone this repository into the directory you just created
 ```
-> git clone git@github.com:zeekhoo-okta/okta-oidc-apigee.git
+> git clone git@github.com:zeekhoo-okta/generator-okta-oidc-apigee.git
 ```
 
 3. 'cd' into the "generator" directory:
