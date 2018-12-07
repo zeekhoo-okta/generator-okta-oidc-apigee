@@ -26,9 +26,10 @@ To run this sample, you'll need:
 ### Okta Account
 * Sign up for a free Developer Account [developer.okta.com](https://developer.okta.com/signup)
 
+#### Register an OpenID Connect Client (the "Apigee" Client)
 * Once you have access to the Developer Console, from there create an OpenID Connect client:
     - From the menu options, navigate to Applications > Add Application > Web
-    - Provide a name for your app
+    - Provide a name for your app, e.g. `Apigee-Client`
     - Leave Base URI as-is
     - IMPORTANT: Enter the "Login redirect URI" with the value `https://{myorg}-{myenv}.apigee.net/okta-oidc/callback`. For example, If myorg == `"okta_oidc"`, and I am deploying to the `"test"` environment, then the redirect URI is `https://okta_oidc-test.apigee.net/okta-oidc/callback`
     - Click through to complete the App setup
@@ -80,12 +81,13 @@ Sample Generator of OAuth Authorization Code Grant Type Proxies.
 ? Your Okta "Org": dev-######.oktapreview.com
 ? The CLIENT_ID of the app you created in Okta:
 ? The CLIENT_SECRET of the app you created in Okta:
-? Id of the AuthorizationServer you configured to use in Okta (your Developer account comes with a pre-configured "default" AS):
+? Id of the AuthorizationServer you configured to use in Okta (your Developer account comes with a pre-configured "default" AS): default
 ```
+*Note: Obtain the CLIENT_ID and CLIENT_SECRET values from the App you registered in Okta from previous steps. Your Okta account should have a "default" AuthorizationServer so use that value if you're new to Okta.*
 
-## <a name="testit">Test the sample
+## <a name="testit">Running the sample
 
-1. Open a browser and go to this URL:
+1. Open a browser and navigate to the sample "web application":
 
     `http://myorg-myenv.apigee.net/web`
 
@@ -93,4 +95,4 @@ Sample Generator of OAuth Authorization Code Grant Type Proxies.
 
     `http://okta_oidc-test.apigee.net/web`
 
-2. Initiate the flow.  Just click the "Apigee+Okta Example Auth" button. This action sends a request to the authorization server (Apigee Edge), which redirects the browser to Okta for login.
+2. Initiate the flow.  Just click the "Apigee+Okta Example Auth" button. This action sends a request to the /oauth2/authorization proxy endpoint, initiating OAuth2. The AuthorizationServver (Apigee Edge) then redirects the browser to Okta for login.
