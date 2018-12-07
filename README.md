@@ -1,4 +1,5 @@
-This is a heavily modified version of Apigee's [oauth andvanced sample](https://github.com/apigee/api-platform-samples/tree/master/sample-proxies/oauth-advanced) by "replacing" the sample Node.js login-app contained in the sample with Okta. Apigee is still the OAuth2 Authorization Server, but at a high level, it has also become an "OpenID Connect Client," which authenticates to Okta, the "IdP."" By delegating Authentication to Okta, you gain all the benefits of an enterprise-solution grade, secure and fully featured Identity Mangement System. Just some of the things you can do with Okta include:
+# Introduction
+This sample builds upon Apigee's excellent [oauth andvanced sample](https://github.com/apigee/api-platform-samples/tree/master/sample-proxies/oauth-advanced) sample project, which demonstrates how to implement OAuth2 Authorization Code flow with Apigee. We have modified the sample by **"replacing" the Node.js "login-app" with [Okta](https://developer.okta.com/product)**. Apigee is still the OAuth2 Authorization Server, but at a high level it has also become an "OpenID Connect Client," authenticating into Okta (the "IdP"). By delegating Authentication to Okta, you get to leverage Okta's enterprise grade security Identity Management features. Just some of the things you can do with Okta include:
 * Add Social Auth capabilities to your application
 * Seamlessly connect to an 3rd party SAML and OpenID Connect IdPs
 * Provide MFA
@@ -17,7 +18,7 @@ To run this sample, you'll need:
 * Yeoman [installed](http://yeoman.io/)
 
 ### Apigee Account
-* The username and password that you use to login to `enterprise.apigee.com`.
+* The *Admin* username and password that you use to login to `enterprise.apigee.com`.
 
 * The name of the organization in which you have an account. Login to
   `enterprise.apigee.com` and check account settings.
@@ -26,7 +27,7 @@ To run this sample, you'll need:
 * Sign up for a free Developer Account [developer.okta.com](https://developer.okta.com/signup)
 
 * Once you have access to the Developer Console, from there create an OpenID Connect client:
-    - Applications > Add Application > Web
+    - From the menu options, navigate to Applications > Add Application > Web
     - Provide a name for your app
     - Leave Base URI as-is
     - IMPORTANT: Enter the "Login redirect URI" with the value `https://{myorg}-{myenv}.apigee.net/okta-oidc/callback`. For example, If myorg == `"okta_oidc"`, and I am deploying to the `"test"` environment, then the redirect URI is `https://okta_oidc-test.apigee.net/okta-oidc/callback`
@@ -64,10 +65,10 @@ e.g.
 ```
 This will install your project dependencies and symlink a global module to your local file. After npm is done, you will be able to call `yo generator-name`
 
-2. Call Yeoman:
+6. Call Yeoman:
     `yo okta-oidc-apigee`
 
-3. Follow the prompts:
+7. Follow the prompts:
 
 ```
 Sample Generator of OAuth Authorization Code Grant Type Proxies.
