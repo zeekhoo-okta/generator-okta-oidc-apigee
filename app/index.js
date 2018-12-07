@@ -6,14 +6,8 @@ var chalk = require('chalk');
 var shell = require('shelljs');
 
 module.exports = class extends Generator {
- // The name `constructor` is important here
   constructor(args, opts) {
-    // Calling the super constructor is important so our generator is correctly set up
     super(args, opts);
-
-    // Next, add your custom code
-    // this.option('babel'); // This method adds support for a `--babel` flag
-    // this.pkg = require('../package.json');
   }
 
   async askFor() {
@@ -129,7 +123,7 @@ module.exports = class extends Generator {
 
     var callback_url = 'https://'+this.answers.a_orgname+'-'+this.answers.a_envname+'.apigee.net/web/callback';
 
-    // provision webserver
+    // provision webserver-app
     shell.sed('-i','CALLBACKURL', callback_url, 'provisioning/webserver-app.xml');
     shell.sed('-i','ENVNAME', this.answers.a_envname, 'provisioning/webserver-product.json');
 
@@ -138,15 +132,10 @@ module.exports = class extends Generator {
 
     //capture clientID and secret from last step and put in webserver-app bundle
     var webserverappkey = shell.exec("curl -H 'Accept: application/json' -u '"+this.answers.a_uname+":"+this.answers.a_password+"' "+this.answers.mgmtapiurl+"/v1/o/"+this.answers.a_orgname+"/developers/webdev@example.com/apps/okta-oidc-apigee-webserver-app 2>/dev/null | grep consumerKey | awk -F '\"' '{ print $4 }'").stdout;
-    this.log('webserverappkey='+webserverappkey);
-
     var webserverappsecret = shell.exec("curl -H 'Accept: application/json' -u '"+this.answers.a_uname+":"+this.answers.a_password+"' "+this.answers.mgmtapiurl+"/v1/o/"+this.answers.a_orgname+"/developers/webdev@example.com/apps/okta-oidc-apigee-webserver-app 2>/dev/null | grep consumerSecret | awk -F '\"' '{ print $4 }'").stdout;
-    this.log('webserverappsecret='+webserverappsecret);
-
     // remove trailing whitespace
     webserverappkey = webserverappkey.replace(/\n$/, "");
     webserverappsecret = webserverappsecret.replace(/\n$/, "");
-
 
     // deploy OktaOIDC proxy
     shell.cd('../OktaOIDC');
@@ -168,6 +157,7 @@ module.exports = class extends Generator {
     shell.sed('-i','WEBSERVERAPPKEY', webserverappkey, 'apiproxy/policies/HTMLIndex.xml');
     shell.sed('-i','ENVNAME', this.answers.a_envname, 'apiproxy/policies/HTMLIndex.xml');
     shell.sed('-i','ORGNAME', this.answers.a_orgname, 'apiproxy/policies/HTMLIndex.xml');
+    // deploy webserver-app proxy
     shell.sed('-i','WEBSERVERAPPKEY', webserverappkey, 'apiproxy/policies/SetConfigurationVariables.xml');
     shell.sed('-i','WEBSERVERAPPSECRET', webserverappsecret, 'apiproxy/policies/SetConfigurationVariables.xml');    
     shell.exec('apigeetool deployproxy -u '+this.answers.a_uname+' -p \''+this.answers.a_password+'\' -o '+this.answers.a_orgname+' -e '+this.answers.a_envname+ ' -n webserver-app -d .');

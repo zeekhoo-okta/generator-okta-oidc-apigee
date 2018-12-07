@@ -1,5 +1,5 @@
 # Introduction
-This sample builds upon Apigee's excellent [oauth andvanced sample](https://github.com/apigee/api-platform-samples/tree/master/sample-proxies/oauth-advanced) sample project, which demonstrates how to implement OAuth2 Authorization Code flow with Apigee. We have modified the sample by **"replacing" the Node.js "login-app" with [Okta](https://developer.okta.com/product)**. Apigee is still the OAuth2 Authorization Server, but at a high level it has also become an "OpenID Connect Client," authenticating into Okta (the "IdP"). By delegating Authentication to Okta, you get to leverage Okta's enterprise grade security Identity Management features. Just some of the things you can do with Okta include:
+This sample builds upon Apigee's excellent [oauth andvanced sample](https://github.com/apigee/api-platform-samples/tree/master/sample-proxies/oauth-advanced) sample project, which demonstrates how to implement OAuth2 Authorization Code flow with Apigee. We have modified the sample by **"replacing" the Node.js "login-app" with [Okta](https://developer.okta.com/product)**. Apigee is still the OAuth2 Authorization Server for cour client(s), but at a high level it has also become an "OpenID Connect Client," authenticating into Okta (the "IdP"). By delegating Authentication to Okta, you get to leverage Okta's enterprise grade security Identity Management features. Just some of the things you can do with Okta include:
 * Add Social Auth capabilities to your application
 * Seamlessly connect to an 3rd party SAML and OpenID Connect IdPs
 * Provide MFA
@@ -76,7 +76,7 @@ Sample Generator of OAuth Authorization Code Grant Type Proxies.
 ? Your Apigee admin username:
 ? Your Apigee admin password:
 ? Apigee Organization Name:
-? Apigee Environment Name
+? Apigee Environment Name:
 ? Management API URL Endpoint: https://api.enterprise.apigee.com
 ? Your Okta "Org": dev-######.oktapreview.com
 ? The CLIENT_ID of the app you created in Okta:
@@ -95,4 +95,4 @@ Sample Generator of OAuth Authorization Code Grant Type Proxies.
 
     `http://okta_oidc-test.apigee.net/web`
 
-2. Initiate the flow.  Just click the "Apigee+Okta Example Auth" button. This action sends a request to the /oauth2/authorization proxy endpoint, initiating OAuth2. The AuthorizationServver (Apigee Edge) then redirects the browser to Okta for login.
+2. Initiate the flow.  Just click the `[Apigee+Okta Example Login]` button. This action sends a request to the `/oauth2/authorize` proxy endpoint, initiating OAuth2. The AuthorizationServver (Apigee) which redirects the browser to Okta for login.
