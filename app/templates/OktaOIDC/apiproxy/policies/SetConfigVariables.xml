@@ -5,23 +5,23 @@
     <Properties/>
     <AssignVariable>
         <Name>okta.org</Name>
-        <Value>login.alwaysaasure.com</Value>
+        <Value>OKTAORGNAME</Value>
     </AssignVariable>
     <AssignVariable>
-        <Name>okta.auth_server_id</Name>
+        <Name>OKTAAUTHSERVERID</Name>
         <Value>default</Value>
     </AssignVariable>
     <AssignVariable>
         <Name>okta.issuer</Name>
-        <Value>https://login.alwaysaasure.com/oauth2/default</Value>
+        <Value>https://OKTAORGNAME/oauth2/OKTAAUTHSERVERID</Value>
     </AssignVariable>
     <AssignVariable>
         <Name>okta.client_id</Name>
-        <Value>0oa4ox4jzjHj9vWgR1t7</Value>
+        <Value>OKTACLIENTID</Value>
     </AssignVariable>
     <AssignVariable>
         <Name>okta.client_secret</Name>
-        <Value>2soyiicpdUIhICPCiwV6t588jh3vJIU_duTHS-wf</Value>
+        <Value>OKTACLIENTSECRET</Value>
     </AssignVariable>
     <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
 </AssignMessage>
