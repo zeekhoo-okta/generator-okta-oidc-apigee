@@ -3,7 +3,7 @@
     <DisplayName>RetrieveOktaJwks</DisplayName>
     <FaultRules/>
     <Properties/>
-    <Request clearPayload="false">
+    <Request clearPayload="false" variable="servicecallout.request">
         <Set>
             <Verb>GET</Verb>
         </Set>

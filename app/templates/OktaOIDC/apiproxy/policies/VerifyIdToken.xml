@@ -3,13 +3,13 @@
     <DisplayName>VerifyIdToken</DisplayName>
     <FaultRules/>
     <Properties/>
-    <Algorithm>RS256</Algorithm>
     <AdditionalClaims/>
     <AdditionalHeaders/>
+    <Algorithm>RS256</Algorithm>
     <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
-    <Issuer ref="okta.issuer"/>
+    <Issuer ref="okta.issuer"></Issuer>
     <PublicKey>
-        <JWKS ref="cached.okta.jwks"/>
+        <JWKS ref="cached.okta.jwks"></JWKS>
     </PublicKey>
     <Source>id_token</Source>
 </VerifyJWT>

@@ -3,21 +3,21 @@
     <DisplayName>GenerateAuthorizationCodeWithUserContext</DisplayName>
     <FaultRules/>
     <Properties/>
-    <Operation>GenerateAuthorizationCode</Operation>
     <ClientId>cached.client_id</ClientId>
+    <Attributes>
+        <Attribute display="true" name="context_json" ref="jwt.VerifyAccessToken.payload-json">NA</Attribute>
+    </Attributes>
+    <ExpiresIn>30000</ExpiresIn>
     <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>GenerateAuthorizationCode</Operation>
     <RedirectUri>cached.redirect_uri</RedirectUri>
     <GenerateResponse enabled="true">
         <Format>FORM_PARAM</Format>
     </GenerateResponse>
-    <Attributes>
-        <Attribute display="true" name="context_json" ref="jwt.VerifyAccessToken.payload-json">NA</Attribute>
-    </Attributes>
     <ResponseType>cached.response_type</ResponseType>
     <ReuseRefreshToken>false</ReuseRefreshToken>
     <Scope>cached.scope</Scope>
     <State>cached.state</State>
-    <ExpiresIn>30000</ExpiresIn>
     <SupportedGrantTypes/>
     <Tokens/>
 </OAuthV2>

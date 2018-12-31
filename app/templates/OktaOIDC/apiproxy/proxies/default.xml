@@ -2,30 +2,6 @@
 <ProxyEndpoint name="default">
     <Description/>
     <FaultRules/>
-    <PreFlow name="PreFlow">
-        <Request>
-            <Step>
-                <FaultRules/>
-                <Name>SetConfigVariables</Name>
-            </Step>
-            <Step>
-                <FaultRules/>
-                <Name>ExtractMessageId</Name>
-            </Step>
-            <Step>
-                <FaultRules/>
-                <Name>LookupCache-ProxySessionId</Name>
-            </Step>
-            <Step>
-                <Name>ParseCachedRequest</Name>
-            </Step>
-            <Step>
-                <FaultRules/>
-                <Name>LookupCache-OktaJwks</Name>
-            </Step>
-        </Request>
-        <Response/>
-    </PreFlow>
     <Flows>
         <Flow name="callback">
             <Description>Exchange authorization_code for Tokens</Description>
@@ -47,17 +23,25 @@
                     <Name>ExtractAccessAndIdToken</Name>
                 </Step>
                 <Step>
-                    <Condition>cached.okta.jwks = null</Condition>
+                    <Name>DecodeIdToken</Name>
+                </Step>
+                <Step>
+                    <Condition>cached.okta.jwks != null</Condition>
+                    <FaultRules/>
+                    <Name>CheckKeyRotation</Name>
+                </Step>
+                <Step>
+                    <Condition>refresh_jwks_cache == true</Condition>
                     <FaultRules/>
                     <Name>RetrieveOktaJwks</Name>
                 </Step>
                 <Step>
-                    <Condition>cached.okta.jwks = null</Condition>
+                    <Condition>refresh_jwks_cache == true</Condition>
                     <FaultRules/>
                     <Name>PopulateCache-OktaJwks</Name>
                 </Step>
                 <Step>
-                    <Condition>cached.okta.jwks = null</Condition>
+                    <Condition>refresh_jwks_cache == true</Condition>
                     <FaultRules/>
                     <Name>AV-OktaJwks</Name>
                 </Step>
@@ -81,10 +65,9 @@
                     <Name>GenerateAuthorizationCodeWithUserContext</Name>
                 </Step>
             </Request>
+            <Response/>
             <Condition>(request.verb = "GET") and (request.queryparam.code != null) and (proxy.pathsuffix MatchesPath "/callback")
             </Condition>
-            <Response>
-            </Response>
         </Flow>
         <Flow name="unknown request">
             <Request>
@@ -100,6 +83,34 @@
         <Request/>
         <Response/>
     </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>SetConfigVariables</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>ExtractMessageId</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>LookupCache-ProxySessionId</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>ParseCachedRequest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>LookupCache-OktaJwks</Name>
+            </Step>
+            <Step>
+                <Name>InitializeRefreshJwksCacheToFalse</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
     <HTTPProxyConnection>
         <BasePath>/okta-oidc</BasePath>
         <Properties/>

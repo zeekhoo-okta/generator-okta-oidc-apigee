@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <LookupCache async="false" continueOnError="false" enabled="true" name="LookupCache-ProxySessionId">
     <DisplayName>LookupCache-ProxySessionId</DisplayName>
+    <FaultRules/>
     <Properties/>
     <CacheKey>
-        <KeyFragment ref="okta-oauth-state.messageId"/>
         <Prefix>okta-oidc</Prefix>
+        <KeyFragment ref="okta-oauth-state.messageId"></KeyFragment>
     </CacheKey>
     <CacheResource>cache1</CacheResource>
     <Scope>Application</Scope>
