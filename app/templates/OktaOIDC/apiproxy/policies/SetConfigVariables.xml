@@ -8,8 +8,8 @@
         <Value>OKTAORGNAME</Value>
     </AssignVariable>
     <AssignVariable>
-        <Name>OKTAAUTHSERVERID</Name>
-        <Value>default</Value>
+        <Name>okta.auth_server_id</Name>
+        <Value>OKTAAUTHSERVERID</Value>
     </AssignVariable>
     <AssignVariable>
         <Name>okta.issuer</Name>
