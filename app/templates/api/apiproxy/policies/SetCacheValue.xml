@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="SetCacheValue">
+    <DisplayName>SetCacheValue</DisplayName>
+    <AssignVariable>
+        <Name>auth_state</Name>
+        <Value/>
+        <Ref/>
+        <Template>{"access_token": "{apigee.access_token}", "idp": "{idp}"}</Template>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

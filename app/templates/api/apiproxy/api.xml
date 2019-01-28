@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="api">
+    <Basepaths>/pix-poc</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1548266091761</CreatedAt>
+    <CreatedBy>zeekhoo@gmail.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>pix-poc</DisplayName>
+    <LastModifiedAt>1548266887105</LastModifiedAt>
+    <LastModifiedBy>zeekhoo@gmail.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:4aabf819c7fb6386348ebe245500586cc51c14f72a567725c9d51c5ad5ac72a976e112838f2f2a3349a6327ed031aff3a160f8b92ae0848e6b6dc2ca5e177c71</ManifestVersion>
+    <Policies>
+        <Policy>ExtractIdP</Policy>
+        <Policy>PopulateCachestateToken</Policy>
+        <Policy>ReturnStateToken</Policy>
+        <Policy>SetCacheValue</Policy>
+        <Policy>ValidateAccessToken</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+</APIProxy>

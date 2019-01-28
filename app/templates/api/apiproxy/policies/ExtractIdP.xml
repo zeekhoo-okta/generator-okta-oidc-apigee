@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="ExtractIdP">
+    <DisplayName>ExtractIdP</DisplayName>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <JSONPayload>
+        <Variable name="idp">
+            <JSONPath>$.idp</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <Source clearPayload="false">request.content</Source>
+</ExtractVariables>

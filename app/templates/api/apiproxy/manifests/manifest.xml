@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="ExtractIdP" version="SHA-512:65182684e5635440a81e744805d1cf0e40358afa3bc5a04fcc760df919649276b28a55f4dc82a825f1bfdea1d69b4f82226e6a55439875baa7d8b261ec5639d1"/>
+        <VersionInfo resourceName="PopulateCachestateToken" version="SHA-512:8554b296cd2be2f3f85a560726d70a005bea6b93c90619f6aa8b319ff52466b0e34ba514398f7f3df3d18109cf15a5fd506bc9655b9dc4c764782f91a9f1564a"/>
+        <VersionInfo resourceName="ReturnStateToken" version="SHA-512:3c61107d61340095dc5cf2f87cab379a6f5109e6d69a9dcffb616fe1d019e56a612235c92e487e3fa268bd491b90c1d3c7948dd8fd0d3811508d7ca94fb44f0b"/>
+        <VersionInfo resourceName="SetCacheValue" version="SHA-512:f56cfb07a67b549b17d6be941b350e8355bd7338572db4da8cbc254456f43a5ce8d0cb070aa1dcd2a41bd3aac851940ea59a7e040f97fc767b155a25252337cc"/>
+        <VersionInfo resourceName="ValidateAccessToken" version="SHA-512:bbdab694d6f3e66d341e1f1ea98dc7e8739806fbe6c4fdb1482dd9daed910d19a34dc08dd9ec7930d1b30e72ecad80952ad3e5ea55c27fc9053be96b622d1613"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:bda468a9d9ac8fb6b81245890c33011e57bacbfb408c9e7772267f045427224c3e1d0a90fdb65f365a2a96b5b56a9dc421abd7946c8d931994e690e8f67d6f26"/>
+    </ProxyEndpoints>
+    <Resources/>
+    <SharedFlows/>
+    <TargetEndpoints/>
+</Manifest>
