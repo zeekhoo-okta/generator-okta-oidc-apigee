@@ -5,7 +5,9 @@
     <Properties/>
     <ClientId>cached.client_id</ClientId>
     <Attributes>
-        <Attribute display="true" name="context_json" ref="jwt.VerifyAccessToken.payload-json">NA</Attribute>
+        <Attribute display="true" name="context_default" ref="composite_token.context.default">NA</Attribute>
+        <Attribute display="true" name="context_idp_1" ref="composite_token.context.idp1"/>
+        <Attribute display="true" name="context_idp_2" ref="composite_token.context.idp2"/>
     </Attributes>
     <ExpiresIn>30000</ExpiresIn>
     <ExternalAuthorization>false</ExternalAuthorization>

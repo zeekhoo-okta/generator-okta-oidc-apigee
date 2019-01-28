@@ -5,24 +5,109 @@
     <Properties/>
     <Set>
         <Payload contentType="text/html" variablePrefix="^" variableSuffix="~">
-      &lt;!DOCTYPE html&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-   &lt;head&gt;
-      &lt;script&gt;
-         var BASEURL="https://ORGNAME-ENVNAME.apigee.net";
-         var REDIRECT="https://ORGNAME-ENVNAME.apigee.net/web/callback";
-         var CLIENT_ID="WEBSERVERAPPKEY";
+    &lt;head&gt;
+        &lt;style&gt;
+        table {border-collapse: collapse;}
+        table, th, td {border: 1px solid black;}
+        &lt;/style&gt;
+
+        &lt;script src="https://ok1static.oktacdn.com/assets/js/sdk/okta-auth-js/1.17.0/okta-auth-js.min.js" type="text/javascript"&gt;&lt;/script&gt;
+
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="login-buttons"&gt;
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;click&lt;/th&gt;
+                    &lt;th&gt;window.location.href&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;&lt;input type="button" value="Login Local" onclick="login('auth-td1')" /&gt;&lt;/td&gt;
+                    &lt;td id="auth-td1"/&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;&lt;input type="button" value="Login from IdP #1" onclick="relogin(IDP_ID1)" /&gt;&lt;/td&gt;
+                    &lt;td id="auth-td2"/&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;&lt;input type="button" value="Login from IdP #2" onclick="relogin(IDP_ID2)" /&gt;&lt;/td&gt;
+                    &lt;td id="auth-td3"/&gt;
+                &lt;/tr&gt;            
+            &lt;/table&gt;
+        &lt;/div&gt;
+
+        &lt;div id="composite-token"&gt;
+            &lt;h3&gt;Composite Token:&lt;/h3&gt;
+            &lt;textarea id="jwt-text-area" rows="50" cols="200"&gt;
+            &lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+        var BASEURL="https://ORGNAME-ENVNAME.apigee.net";
+        var REDIRECT="https://ORGNAME-ENVNAME.apigee.net/web/callback";
+        var CLIENT_ID="WEBSERVERAPPKEY";
+        var IDP_ID1="{idp_id}";
+        var IDP_ID2="{idp_id}";
+
+        var auth_url=BASEURL+'/oauth2/authorize?client_id='+CLIENT_ID+'&amp;redirect_uri='+REDIRECT+'&amp;response_type=code&amp;scope=foo&amp;state=bar';
+
+        var auth_idp1=auth_url+'&amp;'+"idp="+IDP_ID1;
+        var auth_idp2=auth_url+'&amp;'+"idp="+IDP_ID2;
+        
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const access_token = urlParams.get('access_token');
+        if (access_token) {
+            var composite_token = '';
+            var json = '^context_json~';
+            if (json != '') {
+                composite_token=JSON.stringify(JSON.parse(json), undefined, 2);
+            }
+
+            var json_idp1 = '^context_json_idp1~';
+            if (json_idp1 != '') {
+                composite_token=composite_token + "\r\n" + JSON.stringify(JSON.parse(json_idp1), undefined, 2);
+            }
+
+            var json_idp2 = '^context_json_idp2~';
+            if (json_idp2 != '') {
+                composite_token=composite_token + "\r\n" + JSON.stringify(JSON.parse(json_idp2), undefined, 2);
+            }
+
+            document.getElementById("jwt-text-area").innerHTML=composite_token;
+        }
+
+        document.getElementById("auth-td1").innerHTML=auth_url;
+        document.getElementById("auth-td2").innerHTML=auth_idp1;
+        document.getElementById("auth-td3").innerHTML=auth_idp2;
 
 
-         function login()
-         {
-         window.location.href=BASEURL+'/oauth2/authorize?client_id='+CLIENT_ID+'&amp;redirect_uri='+REDIRECT+'&amp;response_type=code&amp;scope=foo&amp;state=bar';
-         }
-      &lt;/script&gt;
-   &lt;/head&gt;
-   &lt;body&gt;
-      &lt;input type="button" value="Apigee+Okta Example Login" onclick="login()" /&gt;
-   &lt;/body&gt;
+        function login(id)
+        {
+            var url = document.getElementById(id).innerText;
+            window.location.href=url;
+        }
+        
+        function relogin(idp)
+        {
+            window.location.href="/web/switch-context?idp="+idp+"&amp;access_token="+access_token;
+        }
+        
+        var config = {
+          url: 'https://OKTAORGNAME'
+        };
+        var authClient = new OktaAuth(config);
+        authClient.signOut()
+        .then(function() {
+          console.log('successfully logged out');
+        })
+        .fail(function(err) {
+          console.error(err);
+        });
+
+        &lt;/script&gt;
+    &lt;/body&gt;
 &lt;/html&gt;
       </Payload>
         <StatusCode>200</StatusCode>

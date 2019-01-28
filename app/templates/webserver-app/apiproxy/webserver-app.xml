@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="2" name="webserver-app">
+<APIProxy revision="4" name="webserver-app">
+    <Basepaths>/web</Basepaths>
     <Basepaths>/web</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1543956756668</CreatedAt>
+    <CreatedAt>1546450225473</CreatedAt>
     <CreatedBy>zeekhoo@gmail.com</CreatedBy>
     <Description></Description>
     <DisplayName>webserver-app</DisplayName>
-    <LastModifiedAt>1543956756668</LastModifiedAt>
+    <LastModifiedAt>1548282520880</LastModifiedAt>
     <LastModifiedBy>zeekhoo@gmail.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:4e88720d46bf33eeffc71708bac89e79e497cb6be372213b10c389308ec11b6fcb5912c904ec68426a90d6a960ceabfc36ecb36f1301449e81430f8ad53e4f34</ManifestVersion>
+    <ManifestVersion>SHA-512:da6732ca5f288356209871f74e741c86edf03f4cb45479ab6ca34832d88208dd6e880cfbca526f623133d2e1d41c14a044a3178a17e4f122a1bebb71702400da</ManifestVersion>
     <Policies>
         <Policy>BuildAccessTokenRequest</Policy>
         <Policy>BuildValidateTokenRequest</Policy>
         <Policy>EncodeAppCredentials</Policy>
         <Policy>ExtractAccessToken</Policy>
         <Policy>ExtractUser</Policy>
+        <Policy>GetStateToken</Policy>
         <Policy>HTMLIndex</Policy>
         <Policy>RedirectToAuthenticatedHomepage</Policy>
+        <Policy>RedirectToOAuth2WithStateToken</Policy>
         <Policy>RequestAccessToken</Policy>
-        <Policy>SetAuthenticatedHomePageResponse</Policy>
+        <Policy>RequestChangeContext</Policy>
+        <Policy>SetChangeContextMessage</Policy>
         <Policy>SetConfigurationVariables</Policy>
         <Policy>ValidateTokenCallout</Policy>
     </Policies>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="LookupCachedAuthState">
+    <DisplayName>LookupCachedAuthState</DisplayName>
+    <CacheKey>
+        <Prefix>auth.state_token</Prefix>
+        <KeyFragment ref="cached.state"/>
+    </CacheKey>
+    <CacheResource>cache1</CacheResource>
+    <Scope>Application</Scope>
+    <AssignTo>cached.auth_state</AssignTo>
+</LookupCache>

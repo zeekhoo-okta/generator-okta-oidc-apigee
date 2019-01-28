@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="2" name="OktaOIDC">
+<APIProxy revision="6" name="OktaOIDC">
     <Basepaths>/solar-system</Basepaths>
     <Basepaths>/okta-oidc</Basepaths>
+    <Basepaths>/okta-oidc</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1544205480606</CreatedAt>
+    <CreatedAt>1548703469951</CreatedAt>
     <CreatedBy>zeekhoo@gmail.com</CreatedBy>
     <Description></Description>
     <DisplayName>OktaOIDCHandler</DisplayName>
-    <LastModifiedAt>1546286942946</LastModifiedAt>
+    <LastModifiedAt>1548703469951</LastModifiedAt>
     <LastModifiedBy>zeekhoo@gmail.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:9f71fe411d0b3ff5dc76d651929e528eac4b647a980d02fa58859e8770a7e07018822748acd69c2d784b94cb45d4e4ebd67e2d63d94e1f527dc921f8c0b8fef8</ManifestVersion>
+    <ManifestVersion>SHA-512:c9192709da712e9966594ddb2f7ba13eec35a2edd19883b7e25e5f1fa1b3822e732ae3e67d68b2860aad67956837192e5f62968f6daa3f8ca7a413747ba91ebb</ManifestVersion>
     <Policies>
         <Policy>AV-OktaJwks</Policy>
+        <Policy>AppendAccessToken</Policy>
         <Policy>CheckKeyRotation</Policy>
         <Policy>DecodeIdToken</Policy>
         <Policy>EncodeAppCreds</Policy>
         <Policy>ExtractAccessAndIdToken</Policy>
         <Policy>ExtractMessageId</Policy>
         <Policy>GenerateAuthorizationCodeWithUserContext</Policy>
+        <Policy>GenerateCompositeToken</Policy>
+        <Policy>GetCachedAccesToken</Policy>
         <Policy>InitializeRefreshJwksCacheToFalse</Policy>
         <Policy>LookupCache-OktaJwks</Policy>
         <Policy>LookupCache-ProxySessionId</Policy>
+        <Policy>LookupCachedAuthState</Policy>
         <Policy>OktaAccessTokenRequest</Policy>
+        <Policy>ParseAuthState</Policy>
         <Policy>ParseCachedRequest</Policy>
         <Policy>PopulateCache-OktaJwks</Policy>
         <Policy>RF-NonceDoesNotMatchRequest</Policy>
@@ -29,6 +35,7 @@
         <Policy>RedirectToOAuthRedirectURI</Policy>
         <Policy>RequestOktaAccessToken</Policy>
         <Policy>RetrieveOktaJwks</Policy>
+        <Policy>ReturnToWebApp</Policy>
         <Policy>SetConfigVariables</Policy>
         <Policy>VerifyAccessToken</Policy>
         <Policy>VerifyIdToken</Policy>
@@ -38,6 +45,9 @@
     </ProxyEndpoints>
     <Resources>
         <Resource>jsc://CheckKeyRotation.js</Resource>
+        <Resource>jsc://GenerateCompositeContext.js</Resource>
+        <Resource>jsc://GenerateCompositeToken.js</Resource>
+        <Resource>jsc://ParseAuthState.js</Resource>
         <Resource>jsc://ParseCachedRequest.js</Resource>
     </Resources>
     <Spec></Spec>

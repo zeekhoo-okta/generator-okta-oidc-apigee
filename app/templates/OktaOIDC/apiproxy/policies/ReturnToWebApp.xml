@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="ReturnToWebApp">
+    <DisplayName>ReturnToWebApp</DisplayName>
+    <Set>
+        <Headers>
+            <Header name="Location">https://{organization.name}-{environment.name}.apigee.net/web?access_token={apigee.access_token}</Header>
+        </Headers>
+        <Path/>
+        <StatusCode>302</StatusCode>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

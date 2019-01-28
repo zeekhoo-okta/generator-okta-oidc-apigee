@@ -6,10 +6,16 @@
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
     <JSONPayload>
         <Variable name="subject">
-            <JSONPath>$.sub</JSONPath>
+            <JSONPath>$.default.subject</JSONPath>
         </Variable>
         <Variable name="context_json">
-            <JSONPath>$.</JSONPath>
+            <JSONPath>$.default</JSONPath>
+        </Variable>
+        <Variable name="context_json_idp1">
+            <JSONPath>$.idp1</JSONPath>
+        </Variable>
+        <Variable name="context_json_idp2">
+            <JSONPath>$.idp2</JSONPath>
         </Variable>
     </JSONPayload>
     <Source clearPayload="false">calloutResponse</Source>

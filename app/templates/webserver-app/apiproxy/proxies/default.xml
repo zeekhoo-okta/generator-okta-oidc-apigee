@@ -32,7 +32,7 @@
                 <Step>
                     <Condition>(calloutResponse.status.code == 200)</Condition>
                     <FaultRules/>
-                    <Name>SetAuthenticatedHomePageResponse</Name>
+                    <Name>HTMLIndex</Name>
                 </Step>
             </Response>
             <Condition>(request.verb =="GET") and (proxy.pathsuffix MatchesPath "/") and (request.queryparam.access_token != null)</Condition>
@@ -75,6 +75,25 @@
                 </Step>
             </Response>
             <Condition>(proxy.pathsuffix MatchesPath "/callback") and (request.queryparam.code != null) and (request.verb =="GET")</Condition>
+        </Flow>
+        <Flow name="app-switch-context">
+            <Request>
+                <Step>
+                    <Name>SetChangeContextMessage</Name>
+                </Step>
+                <Step>
+                    <Name>RequestChangeContext</Name>
+                </Step>
+                <Step>
+                    <Name>GetStateToken</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>RedirectToOAuth2WithStateToken</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/switch-context")</Condition>
         </Flow>
     </Flows>
     <PostFlow name="PostFlow">

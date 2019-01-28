@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="RequestChangeContext">
+    <DisplayName>RequestChangeContext</DisplayName>
+    <Request clearPayload="true" variable="setChangeContextMessage">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>changeContextResponse</Response>
+    <HTTPTargetConnection>
+        <URL>https://{organization.name}-{environment.name}.apigee.net</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

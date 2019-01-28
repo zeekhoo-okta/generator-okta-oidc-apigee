@@ -34,4 +34,6 @@ var request = {
 };
 context.setVariable("okta_auth.request", JSON.stringify(request));
 
+context.setVariable("okta_auth.idp", context.getVariable("request.queryparam.idp"));
+
 

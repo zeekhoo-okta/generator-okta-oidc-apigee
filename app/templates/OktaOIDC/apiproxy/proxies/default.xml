@@ -2,6 +2,42 @@
 <ProxyEndpoint name="default">
     <Description/>
     <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>SetConfigVariables</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>ExtractMessageId</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>LookupCache-ProxySessionId</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>ParseCachedRequest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>LookupCache-OktaJwks</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>InitializeRefreshJwksCacheToFalse</Name>
+            </Step>
+            <Step>
+                <Name>LookupCachedAuthState</Name>
+            </Step>
+            <Step>
+                <Condition>cached.auth_state != null</Condition>
+                <Name>ParseAuthState</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
     <Flows>
         <Flow name="callback">
             <Description>Exchange authorization_code for Tokens</Description>
@@ -23,6 +59,7 @@
                     <Name>ExtractAccessAndIdToken</Name>
                 </Step>
                 <Step>
+                    <FaultRules/>
                     <Name>DecodeIdToken</Name>
                 </Step>
                 <Step>
@@ -60,12 +97,29 @@
                     <Name>VerifyAccessToken</Name>
                 </Step>
                 <Step>
+                    <Condition>(cached.composite_auth_state.access_token != null)</Condition>
+                    <Name>GetCachedAccesToken</Name>
+                </Step>
+                <Step>
                     <Condition>cached.okta_auth_nonce == jwt.VerifyIdToken.claim.nonce</Condition>
+                    <Name>GenerateCompositeToken</Name>
+                </Step>
+                <Step>
+                    <Condition>(cached.composite_auth_state.access_token == null) and (cached.okta_auth_nonce == jwt.VerifyIdToken.claim.nonce)</Condition>
                     <FaultRules/>
                     <Name>GenerateAuthorizationCodeWithUserContext</Name>
                 </Step>
+                <Step>
+                    <Condition>(cached.composite_auth_state.access_token != null) and (cached.okta_auth_nonce == jwt.VerifyIdToken.claim.nonce)</Condition>
+                    <Name>AppendAccessToken</Name>
+                </Step>
             </Request>
-            <Response/>
+            <Response>
+                <Step>
+                    <Condition>(cached.composite_auth_state.access_token != null) and (cached.okta_auth_nonce == jwt.VerifyIdToken.claim.nonce)</Condition>
+                    <Name>ReturnToWebApp</Name>
+                </Step>
+            </Response>
             <Condition>(request.verb = "GET") and (request.queryparam.code != null) and (proxy.pathsuffix MatchesPath "/callback")
             </Condition>
         </Flow>
@@ -83,34 +137,6 @@
         <Request/>
         <Response/>
     </PostFlow>
-    <PreFlow name="PreFlow">
-        <Request>
-            <Step>
-                <FaultRules/>
-                <Name>SetConfigVariables</Name>
-            </Step>
-            <Step>
-                <FaultRules/>
-                <Name>ExtractMessageId</Name>
-            </Step>
-            <Step>
-                <FaultRules/>
-                <Name>LookupCache-ProxySessionId</Name>
-            </Step>
-            <Step>
-                <FaultRules/>
-                <Name>ParseCachedRequest</Name>
-            </Step>
-            <Step>
-                <FaultRules/>
-                <Name>LookupCache-OktaJwks</Name>
-            </Step>
-            <Step>
-                <Name>InitializeRefreshJwksCacheToFalse</Name>
-            </Step>
-        </Request>
-        <Response/>
-    </PreFlow>
     <HTTPProxyConnection>
         <BasePath>/okta-oidc</BasePath>
         <Properties/>

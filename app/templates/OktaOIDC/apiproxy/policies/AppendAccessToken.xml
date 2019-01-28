@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SetOAuthV2Info async="false" continueOnError="false" enabled="true" name="AppendAccessToken">
+    <DisplayName>AppendAccessToken</DisplayName>
+    <AccessToken ref="apigee.access_token"/>
+    <Attributes>
+        <Attribute display="true" name="context_default" ref="composite_token.context.default"/>
+        <Attribute display="true" name="context_idp_1" ref="composite_token.context.idp1"/>
+        <Attribute display="true" name="context_idp_2" ref="composite_token.context.idp2"/>
+    </Attributes>
+</SetOAuthV2Info>

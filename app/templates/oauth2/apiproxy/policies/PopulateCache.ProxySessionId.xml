@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PopulateCache async="false" continueOnError="false" enabled="true" name="PopulateCache.ProxySessionId">
     <DisplayName>PopulateCache.ProxySessionId</DisplayName>
+    <FaultRules/>
     <Properties/>
     <CacheKey>
-        <KeyFragment ref="messageid"/>
         <Prefix>okta-oidc</Prefix>
+        <KeyFragment ref="messageid"></KeyFragment>
     </CacheKey>
     <CacheResource>cache1</CacheResource>
     <Scope>Application</Scope>

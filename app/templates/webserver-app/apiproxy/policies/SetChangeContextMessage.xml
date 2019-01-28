@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="SetChangeContextMessage">
+    <DisplayName>BuildChangeContextMessage</DisplayName>
+    <Set>
+        <Headers>
+            <Header name="Authorization">Bearer {request.queryparam.access_token}</Header>
+        </Headers>
+        <Payload contentType="application/json">
+        {"idp":"{request.queryparam.idp}"}
+        </Payload>
+        <Verb>POST</Verb>
+        <Path>/api/change-context</Path>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo type="request" transport="http" createNew="true">setChangeContextMessage</AssignTo>
+</AssignMessage>

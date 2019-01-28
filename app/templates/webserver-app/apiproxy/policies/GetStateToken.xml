@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="GetStateToken">
+    <DisplayName>GetStateToken</DisplayName>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <JSONPayload>
+        <Variable name="stateToken">
+            <JSONPath>$.stateToken</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <Source clearPayload="false">changeContextResponse</Source>
+</ExtractVariables>

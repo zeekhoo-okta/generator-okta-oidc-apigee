@@ -157,6 +157,7 @@ module.exports = class extends Generator {
     shell.sed('-i','WEBSERVERAPPKEY', webserverappkey, 'apiproxy/policies/HTMLIndex.xml');
     shell.sed('-i','ENVNAME', this.answers.a_envname, 'apiproxy/policies/HTMLIndex.xml');
     shell.sed('-i','ORGNAME', this.answers.a_orgname, 'apiproxy/policies/HTMLIndex.xml');
+    shell.sed('-i','OKTAORGNAME', this.answers.okta_org, 'apiproxy/policies/HTMLIndex.xml');
     // deploy webserver-app proxy
     shell.sed('-i','WEBSERVERAPPKEY', webserverappkey, 'apiproxy/policies/SetConfigurationVariables.xml');
     shell.sed('-i','WEBSERVERAPPSECRET', webserverappsecret, 'apiproxy/policies/SetConfigurationVariables.xml');    

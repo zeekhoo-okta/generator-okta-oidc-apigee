@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="RedirectToOAuth2WithStateToken">
+    <DisplayName>RedirectToOAuth2WithStateToken</DisplayName>
+    <Set>
+        <Headers>
+            <Header name="Location">https://{organization.name}-{environment.name}.apigee.net/oauth2/authorize?client_id={appKey}&amp;redirect_uri=https://{organization.name}-{environment.name}.apigee.net/web/callback&amp;response_type=code&amp;scope=foo&amp;state={stateToken}&amp;idp={request.queryparam.idp}</Header>
+        </Headers>
+        <StatusCode>302</StatusCode>
+        <ReasonPhrase>Redirect</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

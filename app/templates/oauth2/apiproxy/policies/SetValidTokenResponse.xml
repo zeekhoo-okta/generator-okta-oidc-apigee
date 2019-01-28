@@ -4,8 +4,8 @@
     <FaultRules/>
     <Properties/>
     <Set>
-        <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">
-        @accesstoken.context_json#
+        <Payload contentType="application/json">
+        {token.composite}
         </Payload>
         <StatusCode>200</StatusCode>
         <ReasonPhrase>OK</ReasonPhrase>
