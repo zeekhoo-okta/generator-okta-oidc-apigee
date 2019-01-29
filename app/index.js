@@ -112,6 +112,11 @@ module.exports = class extends Generator {
     );    
 
     this.fs.copy(
+      this.templatePath('api/apiproxy'),
+      this.destinationPath('../deploy-okta-oidc-apigee/api/apiproxy')
+    );    
+
+    this.fs.copy(
       this.templatePath('provisioning'),
       this.destinationPath('../deploy-okta-oidc-apigee/provisioning')
     );
@@ -163,6 +168,9 @@ module.exports = class extends Generator {
     shell.sed('-i','WEBSERVERAPPSECRET', webserverappsecret, 'apiproxy/policies/SetConfigurationVariables.xml');    
     shell.exec('apigeetool deployproxy -u '+this.answers.a_uname+' -p \''+this.answers.a_password+'\' -o '+this.answers.a_orgname+' -e '+this.answers.a_envname+ ' -n webserver-app -d .');
 
+    // deploy "api" proxy
+    shell.cd('../api');
+    shell.exec('apigeetool deployproxy -u '+this.answers.a_uname+' -p \''+this.answers.a_password+'\' -o '+this.answers.a_orgname+' -e '+this.answers.a_envname+ ' -n api -d .');
   }
 
 };
