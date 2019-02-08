@@ -17,11 +17,15 @@ To run this sample, you'll need:
 
 * Yeoman [installed](http://yeoman.io/)
 
+* apigeetool [installed](https://www.npmjs.com/package/apigeetool)
+
 ### Apigee Account
 * The *Admin* username and password that you use to login to `enterprise.apigee.com`.
 
 * The name of the organization in which you have an account. Login to
   `enterprise.apigee.com` and check account settings.
+
+* Create a cache resource *in the Environment you wish to deploy* with the cache name `cache1`
 
 ### Okta Account
 * Sign up for a free Developer Account [developer.okta.com](https://developer.okta.com/signup)
@@ -96,3 +100,13 @@ Sample Generator of OAuth Authorization Code Grant Type Proxies.
     `http://okta_oidc-test.apigee.net/web`
 
 2. Initiate the flow.  Just click the `[Apigee+Okta Example Login]` button. This action sends a request to the `/oauth2/authorize` proxy endpoint, initiating OAuth2. The AuthorizationServver (Apigee) which redirects the browser to Okta for login.
+
+## <a name="implicit">Implicit flow example
+By default, this sample demonstrates the authorization code (3-legged OAuth) flow but it can also do Implicit flow. To see implicit flow, change the request behind the `[Apigee+Okta Example Login]` button to request the authorize endpoint with response_mode=token:
+* You can do this by editing the `webserever-app` proxy's `HTMLIndex` policy; by changing the button's function call to:
+```
+function login()
+         {
+            window.location.href=BASEURL+'/oauth2/authorize?client_id='+CLIENT_ID+'&amp;redirect_uri='+REDIRECT+'&amp;response_type=token&amp;scope=foo&amp;state=bar';
+         }
+```

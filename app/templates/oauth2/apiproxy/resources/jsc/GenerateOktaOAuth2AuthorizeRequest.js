@@ -1,6 +1,13 @@
 context.setVariable("okta_auth.response_type", "code");
 context.setVariable("okta_auth.scope", "openid email profile");
 
+var idp = context.getVariable("request.queryparam.idp");
+if (idp) {
+    context.setVariable("okta_auth.idp", idp);
+}
+
+
+
 var redirect_uri = "https://" +
     context.getVariable("organization.name") + "-" +
     context.getVariable("environment.name") + "." +

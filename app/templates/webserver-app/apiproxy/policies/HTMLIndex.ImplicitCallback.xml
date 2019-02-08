@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="HTMLIndex.ImplicitCallback">
+    <DisplayName>HTMLIndex.ImplicitCallback</DisplayName>
+    <Set>
+        <Payload contentType="text/html" variablePrefix="^" variableSuffix="~">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body/&gt;
+    &lt;script&gt;
+    var token = window.location.hash.split("#")[1].split("&amp;")[0].split("=")[1];
+    window.location.href="/web?access_token="+token;
+    &lt;/script&gt;
+&lt;/html&gt;
+      </Payload>
+        <StatusCode>200</StatusCode>
+        <ReasonPhrase>OK</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

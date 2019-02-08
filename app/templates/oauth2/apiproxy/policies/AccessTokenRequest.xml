@@ -3,6 +3,7 @@
     <DisplayName>AccessTokenRequest</DisplayName>
     <FaultRules/>
     <Properties/>
+    <Attributes/>
     <ExpiresIn>3600000</ExpiresIn>
     <ExternalAuthorization>false</ExternalAuthorization>
     <Operation>GenerateAccessToken</Operation>

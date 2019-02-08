@@ -2,15 +2,6 @@
 <ProxyEndpoint name="default">
     <Description/>
     <FaultRules/>
-    <PreFlow name="PreFlow">
-        <Request>
-            <Step>
-                <FaultRules/>
-                <Name>SetConfigurationVariables</Name>
-            </Step>
-        </Request>
-        <Response/>
-    </PreFlow>
     <Flows>
         <Flow name="authenticated-homepage">
             <Description/>
@@ -76,11 +67,31 @@
             </Response>
             <Condition>(proxy.pathsuffix MatchesPath "/callback") and (request.queryparam.code != null) and (request.verb =="GET")</Condition>
         </Flow>
+        <Flow name="callback-implicit">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>HTMLIndex.ImplicitCallback</Name>
+                </Step>
+            </Request>
+            <Response>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/callback") and (request.queryparam.code == null) and (request.verb =="GET")</Condition>
+        </Flow>
     </Flows>
     <PostFlow name="PostFlow">
         <Request/>
         <Response/>
     </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>SetConfigurationVariables</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
     <HTTPProxyConnection>
         <BasePath>/web</BasePath>
         <Properties/>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="GenerateAccessTokenWithUserContext">
+    <DisplayName>GenerateAccessTokenWithUserContext</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <ClientId>cached.client_id</ClientId>
+    <Attributes>
+        <Attribute display="true" name="context_json" ref="jwt.VerifyAccessToken.payload-json">NA</Attribute>
+    </Attributes>
+    <ExpiresIn>30000</ExpiresIn>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>GenerateAccessTokenImplicitGrant</Operation>
+    <RedirectUri>cached.redirect_uri</RedirectUri>
+    <GenerateResponse enabled="true">
+    </GenerateResponse>
+    <ResponseType>cached.response_type</ResponseType>
+    <ReuseRefreshToken>false</ReuseRefreshToken>
+    <Scope>cached.scope</Scope>
+    <State>cached.state</State>
+    <SupportedGrantTypes/>
+    <Tokens/>
+</OAuthV2>

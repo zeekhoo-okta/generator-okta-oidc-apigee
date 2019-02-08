@@ -12,9 +12,9 @@
     </Set>
     <AssignVariable>
         <Name>name</Name>
-        <Value/>
-        <Ref/>
+        <Value></Value>
+        <Ref></Ref>
     </AssignVariable>
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
-    <AssignTo type="response" transport="http" createNew="true"/>
+    <AssignTo type="response" transport="http" createNew="true"></AssignTo>
 </AssignMessage>

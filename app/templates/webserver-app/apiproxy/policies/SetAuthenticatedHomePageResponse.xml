@@ -14,5 +14,5 @@
         <ReasonPhrase>OK</ReasonPhrase>
     </Set>
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
-    <AssignTo type="response" transport="http" createNew="true"/>
+    <AssignTo type="response" transport="http" createNew="true"></AssignTo>
 </AssignMessage>

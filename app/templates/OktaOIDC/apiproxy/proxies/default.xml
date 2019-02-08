@@ -23,6 +23,7 @@
                     <Name>ExtractAccessAndIdToken</Name>
                 </Step>
                 <Step>
+                    <FaultRules/>
                     <Name>DecodeIdToken</Name>
                 </Step>
                 <Step>
@@ -60,9 +61,14 @@
                     <Name>VerifyAccessToken</Name>
                 </Step>
                 <Step>
-                    <Condition>cached.okta_auth_nonce == jwt.VerifyIdToken.claim.nonce</Condition>
+                    <Condition>(cached.response_type == "code") and (cached.okta_auth_nonce == jwt.VerifyIdToken.claim.nonce)</Condition>
                     <FaultRules/>
                     <Name>GenerateAuthorizationCodeWithUserContext</Name>
+                </Step>
+                <Step>
+                    <Condition>(cached.response_type == "token") and (cached.okta_auth_nonce == jwt.VerifyIdToken.claim.nonce)</Condition>
+                    <FaultRules/>
+                    <Name>GenerateAccessTokenWithUserContext</Name>
                 </Step>
             </Request>
             <Response/>
@@ -106,6 +112,7 @@
                 <Name>LookupCache-OktaJwks</Name>
             </Step>
             <Step>
+                <FaultRules/>
                 <Name>InitializeRefreshJwksCacheToFalse</Name>
             </Step>
         </Request>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Javascript async="false" continueOnError="false" enabled="true" timeLimit="200" name="GenerateOktaOAuth2AuthorizeRequest">
+<Javascript timeLimit="200" async="false" continueOnError="false" enabled="true" name="GenerateOktaOAuth2AuthorizeRequest">
     <DisplayName>GenerateOktaOAuth2AuthorizeRequest</DisplayName>
+    <FaultRules/>
     <Properties/>
     <ResourceURL>jsc://GenerateOktaOAuth2AuthorizeRequest.js</ResourceURL>
 </Javascript>

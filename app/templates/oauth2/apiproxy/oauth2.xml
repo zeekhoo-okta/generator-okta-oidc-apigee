@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="8" name="oauth2">
+<APIProxy revision="1" name="oauth2">
+    <Basepaths>/oauth2</Basepaths>
     <Basepaths>/oauth2</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1541611335005</CreatedAt>
+    <CreatedAt>1549578064133</CreatedAt>
     <CreatedBy>zeekhoo@gmail.com</CreatedBy>
     <Description>oauth2</Description>
     <DisplayName>oauth2</DisplayName>
-    <LastModifiedAt>1543961173203</LastModifiedAt>
+    <LastModifiedAt>1549585330745</LastModifiedAt>
     <LastModifiedBy>zeekhoo@gmail.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:00fd653ac6ac6c310b1055aeccbc488f45e7a23de1e6d8073da36c27d483409cf7d4a0b461115d312eee6007960ecb70c7b6ca93e98dd826f02d56236231ec83</ManifestVersion>
+    <ManifestVersion>SHA-512:61da189b9d5c45753c9d3af9f1a883e8c4755c12c05983163e56e013b91ec7c2d9db2d16cc87987e24e22d0c3178eb70fb82cf53bfca22aef83d1d2803f50cd5</ManifestVersion>
     <Policies>
         <Policy>AccessTokenRefresh</Policy>
         <Policy>AccessTokenRequest</Policy>

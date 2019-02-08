@@ -2,10 +2,6 @@
 <ProxyEndpoint name="default">
     <Description>Oauth2 API</Description>
     <FaultRules/>
-    <PreFlow name="PreFlow">
-        <Request/>
-        <Response/>
-    </PreFlow>
     <Flows>
         <Flow name="authorize">
             <Description>OAuth2 Authorize Request</Description>
@@ -16,9 +12,9 @@
                     <Name>RF-ParametersAreRequired</Name>
                 </Step>
                 <Step>
-                    <Name>VerifyClientIdRedirectUri</Name>
-                    <FaultRules/>
                     <Condition>request.queryparam.response_type == "code"</Condition>
+                    <FaultRules/>
+                    <Name>VerifyClientIdRedirectUri</Name>
                 </Step>
                 <Step>
                     <FaultRules/>
@@ -91,7 +87,7 @@
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token")</Condition>
         </Flow>
         <Flow name="ValidateToken">
-            <Description/>
+            <Description></Description>
             <Request>
                 <Step>
                     <FaultRules/>
@@ -120,6 +116,10 @@
         <Request/>
         <Response/>
     </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
     <HTTPProxyConnection>
         <BasePath>/oauth2</BasePath>
         <Properties/>

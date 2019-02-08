@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <AssignMessage async="false" continueOnError="false" enabled="true" name="RedirectToOktaOAuth2Authorize">
     <DisplayName>RedirectToOktaOAuth2Authorize</DisplayName>
+    <FaultRules/>
     <Properties/>
     <Set>
-        <StatusCode>302</StatusCode>
         <Headers>
-            <Header name="Location">https://{okta.org}/oauth2/{okta.auth_server_id}/v1/authorize?response_type={okta_auth.response_type}&amp;client_id={okta.client_id}&amp;scope={okta_auth.scope}&amp;redirect_uri={okta_auth.redirect_uri}&amp;state={okta_auth.state}&amp;nonce={okta_auth.nonce}</Header>
+            <Header name="Location">https://{okta.org}/oauth2/{okta.auth_server_id}/v1/authorize?response_type={okta_auth.response_type}&amp;client_id={okta.client_id}&amp;scope={okta_auth.scope}&amp;redirect_uri={okta_auth.redirect_uri}&amp;state={okta_auth.state}&amp;nonce={okta_auth.nonce}&amp;idp={okta_auth.idp}</Header>
         </Headers>
         <Path/>
+        <StatusCode>302</StatusCode>
     </Set>
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
-    <AssignTo createNew="false" transport="http" type="response"/>
+    <AssignTo type="response" transport="http" createNew="false"/>
 </AssignMessage>

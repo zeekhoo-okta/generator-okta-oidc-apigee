@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="2" name="OktaOIDC">
+<APIProxy revision="1" name="OktaOIDC">
     <Basepaths>/solar-system</Basepaths>
     <Basepaths>/okta-oidc</Basepaths>
+    <Basepaths>/okta-oidc</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1544205480606</CreatedAt>
+    <CreatedAt>1549578054575</CreatedAt>
     <CreatedBy>zeekhoo@gmail.com</CreatedBy>
     <Description></Description>
     <DisplayName>OktaOIDCHandler</DisplayName>
-    <LastModifiedAt>1546286942946</LastModifiedAt>
+    <LastModifiedAt>1549580977971</LastModifiedAt>
     <LastModifiedBy>zeekhoo@gmail.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:9f71fe411d0b3ff5dc76d651929e528eac4b647a980d02fa58859e8770a7e07018822748acd69c2d784b94cb45d4e4ebd67e2d63d94e1f527dc921f8c0b8fef8</ManifestVersion>
+    <ManifestVersion>SHA-512:b232e26ead14658f3e57a0dc1fed83b74378d2d1dbbfe7896da71bff1e83cbf481c686ac54b6778c05926bba532a40ed25b9cc85380edd875156cdcf7bb1a46d</ManifestVersion>
     <Policies>
         <Policy>AV-OktaJwks</Policy>
         <Policy>CheckKeyRotation</Policy>
@@ -17,6 +18,7 @@
         <Policy>EncodeAppCreds</Policy>
         <Policy>ExtractAccessAndIdToken</Policy>
         <Policy>ExtractMessageId</Policy>
+        <Policy>GenerateAccessTokenWithUserContext</Policy>
         <Policy>GenerateAuthorizationCodeWithUserContext</Policy>
         <Policy>InitializeRefreshJwksCacheToFalse</Policy>
         <Policy>LookupCache-OktaJwks</Policy>
