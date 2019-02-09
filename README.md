@@ -102,7 +102,7 @@ Sample Generator of OAuth Authorization Code Grant Type Proxies.
 2. Initiate the flow.  Just click the `[Apigee+Okta Example Login]` button. This action sends a request to the `/oauth2/authorize` proxy endpoint, initiating OAuth2. The AuthorizationServver (Apigee) which redirects the browser to Okta for login.
 
 ## <a name="implicit">Implicit flow example
-By default, this sample demonstrates the authorization code (3-legged OAuth) flow but it can also do Implicit flow. To see implicit flow, change the request behind the `[Apigee+Okta Example Login]` button to request the authorize endpoint with response_mode=token:
+By default, this sample demonstrates the authorization code (3-legged OAuth) flow but it can also do Implicit flow. To see implicit flow, change the request behind the `[Apigee+Okta Example Login]` button to request the authorize endpoint with `response_type=token` instead of `response_type=code`
 * You can do this by editing the `webserever-app` proxy's `HTMLIndex` policy; by changing the button's function call to:
 ```
 function login()
