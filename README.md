@@ -79,8 +79,9 @@ This will install your project dependencies and symlink a global module to your 
 Sample Generator of OAuth Authorization Code Grant Type Proxies.
 ? Your Apigee admin username:
 ? Your Apigee admin password:
-? Apigee Organization Name:
-? Apigee Environment Name:
+? Apigee API Proxy Base Url: https://[organization]-[environment].apigee.net
+? Apigee Organization Name: [organization]
+? Apigee Environment Name: [environment]
 ? Management API URL Endpoint: https://api.enterprise.apigee.com
 ? Your Okta "Org": dev-######.oktapreview.com
 ? The CLIENT_ID of the app you created in Okta:

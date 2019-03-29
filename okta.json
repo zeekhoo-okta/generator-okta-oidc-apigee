@@ -1,0 +1,12 @@
+{
+	"name": "okta-oidc-into-apigee",
+	"description": "Easily 'Plug' in Okta (as the IdP for your application) to OAuth 2.0 APIs proxied through Apigee Edge",
+	"url": "https://github.com/zeekhoo-okta/generator-okta-oidc-apigee",
+	"categories": [
+		"authentication", 
+		"authorization",
+		"apiAuthentication",
+		"integrationNetwork"
+	],
+	"logo": "https://developer.okta.com/logo.png"
+}
