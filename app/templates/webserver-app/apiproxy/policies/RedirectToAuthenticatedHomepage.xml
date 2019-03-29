@@ -5,7 +5,7 @@
     <Properties/>
     <Set>
         <Headers>
-            <Header name="Location">https://{organization.name}-{environment.name}.apigee.net/web?access_token={access_token}</Header>
+            <Header name="Location">PROXYBASEURL/web?access_token={access_token}</Header>
         </Headers>
         <StatusCode>302</StatusCode>
         <ReasonPhrase>Redirect</ReasonPhrase>

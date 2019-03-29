@@ -9,6 +9,6 @@
     <Response>calloutResponse</Response>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://{organization.name}-{environment.name}.apigee.net</URL>
+        <URL>PROXYBASEURL</URL>
     </HTTPTargetConnection>
 </ServiceCallout>

@@ -5,18 +5,17 @@
     <Properties/>
     <Set>
         <Payload contentType="text/html" variablePrefix="^" variableSuffix="~">
-      &lt;!DOCTYPE html&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
    &lt;head&gt;
       &lt;script&gt;
-         var BASEURL="https://ORGNAME-ENVNAME.apigee.net";
-         var REDIRECT="https://ORGNAME-ENVNAME.apigee.net/web/callback";
+         var BASEURL="PROXYBASEURL";
+         var REDIRECT="PROXYBASEURL/web/callback";
          var CLIENT_ID="WEBSERVERAPPKEY";
 
 
-         function login()
-         {
-         window.location.href=BASEURL+'/oauth2/authorize?client_id='+CLIENT_ID+'&amp;redirect_uri='+REDIRECT+'&amp;response_type=code&amp;scope=foo&amp;state=bar';
+         function login() {
+           window.location.href=BASEURL+'/oauth2/authorize?client_id='+CLIENT_ID+'&amp;redirect_uri='+REDIRECT+'&amp;response_type=code&amp;scope=foo&amp;state=bar';
          }
       &lt;/script&gt;
    &lt;/head&gt;

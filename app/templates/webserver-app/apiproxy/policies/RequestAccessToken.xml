@@ -9,6 +9,6 @@
     <Response>calloutResponse</Response>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://{organization.name}-{environment.name}.apigee.net/oauth2/token</URL>
+        <URL>PROXYBASEURL/oauth2/token</URL>
     </HTTPTargetConnection>
 </ServiceCallout>

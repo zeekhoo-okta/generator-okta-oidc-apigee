@@ -33,6 +33,14 @@ module.exports = class extends Generator {
         message: 'Your Apigee admin password',
         required: true,
         store: false
+      },       
+      {
+        type: 'input',
+        name: 'a_baseurl',
+        message: 'Apigee API Proxy Base Url',
+        required: true,
+        store   : true,
+        default : 'https://[organization]-[environment].apigee.net'
       }, 
       {
         type: 'input',
@@ -121,7 +129,7 @@ module.exports = class extends Generator {
   install() {
     shell.cd('../deploy-okta-oidc-apigee');
 
-    var callback_url = 'https://'+this.answers.a_orgname+'-'+this.answers.a_envname+'.apigee.net/web/callback';
+    var callback_url = this.answers.a_baseurl+'/web/callback';
 
     // provision webserver-app
     shell.sed('-i','CALLBACKURL', callback_url, 'provisioning/webserver-app.xml');
@@ -143,6 +151,7 @@ module.exports = class extends Generator {
     shell.sed('-i','OKTAAUTHSERVERID', this.answers.auth_server_id, 'apiproxy/policies/SetConfigVariables.xml');
     shell.sed('-i','OKTACLIENTID', this.answers.okta_client_id, 'apiproxy/policies/SetConfigVariables.xml');
     shell.sed('-i','OKTACLIENTSECRET', this.answers.okta_client_secret, 'apiproxy/policies/SetConfigVariables.xml');
+    shell.sed('-i','PROXYBASEURL', this.answers.a_baseurl, 'apiproxy/policies/OktaAccessTokenRequest.xml');
     shell.exec('apigeetool deployproxy -u '+this.answers.a_uname+' -p \''+this.answers.a_password+'\' -o '+this.answers.a_orgname+' -e '+this.answers.a_envname+ ' -n OktaOIDC -d .');
 
     // deploy oauth2 proxy
@@ -155,9 +164,12 @@ module.exports = class extends Generator {
     // configure webserver-app HTML INDEX
     shell.cd('../webserver-app');
     shell.sed('-i','WEBSERVERAPPKEY', webserverappkey, 'apiproxy/policies/HTMLIndex.xml');
-    shell.sed('-i','ENVNAME', this.answers.a_envname, 'apiproxy/policies/HTMLIndex.xml');
-    shell.sed('-i','ORGNAME', this.answers.a_orgname, 'apiproxy/policies/HTMLIndex.xml');
+    shell.sed('-i','PROXYBASEURL', this.answers.a_baseurl, 'apiproxy/policies/HTMLIndex.xml');
     // deploy webserver-app proxy
+    shell.sed('-i','PROXYBASEURL', this.answers.a_baseurl, 'apiproxy/policies/BuildAccessTokenRequest.xml');
+    shell.sed('-i','PROXYBASEURL', this.answers.a_baseurl, 'apiproxy/policies/RedirectToAuthenticatedHomepage.xml');
+    shell.sed('-i','PROXYBASEURL', this.answers.a_baseurl, 'apiproxy/policies/RequestAccessToken.xml');
+    shell.sed('-i','PROXYBASEURL', this.answers.a_baseurl, 'apiproxy/policies/ValidateTokenCallout.xml');
     shell.sed('-i','WEBSERVERAPPKEY', webserverappkey, 'apiproxy/policies/SetConfigurationVariables.xml');
     shell.sed('-i','WEBSERVERAPPSECRET', webserverappsecret, 'apiproxy/policies/SetConfigurationVariables.xml');    
     shell.exec('apigeetool deployproxy -u '+this.answers.a_uname+' -p \''+this.answers.a_password+'\' -o '+this.answers.a_orgname+' -e '+this.answers.a_envname+ ' -n webserver-app -d .');
